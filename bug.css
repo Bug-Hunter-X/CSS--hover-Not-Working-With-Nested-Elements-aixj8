@@ -1,0 +1,17 @@
+The following CSS code snippet exhibits unexpected behavior in some browsers.  The `:hover` pseudo-class on the `.container` element doesn't apply correctly when the mouse hovers over the nested `<a>` element:
+
+```css
+.container {
+  background-color: lightgray;
+}
+
+.container:hover {
+  background-color: lightblue;
+}
+
+.container a {
+  color: blue;
+}
+```
+
+This is because the `a` element's hover state might capture the event before it bubbles up to the `.container`. Thus `.container:hover` will not trigger
